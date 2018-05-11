@@ -1,0 +1,121 @@
+C++ Zilch is a game played with 6 six-sided dice. Each die can take on the value of 1 to 6. Any number of people can play a game of Zilch, but for this assignment you will need to handle 1 to 4 players. A player's turn consists of rolling the set of dice and calculating the resulting score. Once everyone has had a turn, you will decide who won the round. It is possible to have multiple winners and your function must allow for that possibility. At the end of a round, as the user if another round should be played. If so, accumulate the scores from each round.
+
+In this assignment, scoring will be simple:
+
+For each 1 rolled, the player receives 100 points
+
+For each 5 rolled, the player receives 50 points
+
+A player's score is the sum of all his points
+
+Building Your Program
+
+Each object in your program will have its own class. Each class will have its own .CPP and .H file. In addition, you will have a .CPP file for the main function.
+
+You will create a Standard player, a Timid player, and an Aggressive player. The standard player will serve as the base class and the timid and aggressive players are derived from the standard player.
+
+The standard player decides to stop if there are less than three dice left to roll
+
+The timid player will only continue if he has less than 150 points in this round or if he has four or more dice to roll.
+
+The aggressive player will continue if he has less than 500 points in this round or if he has at least two dice to roll.
+
+At the start of the game, ask how many humans will be playing (up to four) and then ask if an standard computer (Stan), timid computer (Tim), or an aggressive computer (Alice) can join the game (up to one each).
+
+The program will have an abstract class, called "Player". From this derive your Human, Standard Computer, Aggressive Computer, and Timid Computer. Ask the user how many players will be playing and create a dynamic array of players. For each player, ask if it will be a human, standard computer, aggressive computer, or timid computer and then assign the player's name.The remainder of the game will remain the same. The array will be a standard Template Library Vector.
+
+Output
+
+Each player's roll
+
+The score of each player's roll
+
+The accumulative score of each player for that round
+
+The winner(s) at the end of the current round
+
+Player Attributes
+
+Name
+
+Accumulative score for the game
+
+Current score for this turn
+
+Player Actions
+
+Play a turn
+
+Determine whether to continue turn or stop with current score
+
+Dice Set Attributes
+
+Number of dice that have not been scored
+
+An array of six dice
+
+Dice Set Actions
+
+Roll the dice that have not been scored
+
+Score the dice that were rolled
+
+Dice Attributes
+
+Current value of the die
+
+Dice Actions
+
+Roll the die
+
+A player continues his turn until:
+
+His last roll contains no points. If this happens, the play receives no points for the current turn -- he has zilch'ed.
+
+If his total accumulated points is less than the meld limit, then he must continue rolling, even if the odds for receiving points are poor.
+
+If his total accumulated points is greater than or equal to meld limit, then he has a choice of continuing to roll or stopping with his current score.
+
+Scoring:
+
+At the start of a turn, all six dice are rollable.
+
+Dice that contribute to the score in a roll are set aside and are not rolled again
+
+If all six dice are scored, then all six become rollable again.
+
+As before, a 1 scores 100 points and a 5 scores 50 points. All other dice at this time score no points.
+
+Score a roll by picking the highest of the following:
+
+A straight (rolling a 1,2,3,4,5,6) is 3000 points
+
+Three pairs is worth 1500 points
+
+A double triple (two sets of three of a kind) where triple 1's are worth 1000 points, triple 2's are worth 200 points, triple 3's are worth 300 points, triple 4's are worth 400 points, triple 5's are worth 500 points and triple 6's are worth 600 points. You add the two sets of triple points together.
+
+A full-house (one triple and one pair) is worth 300 plus the value of the triple.
+
+A triple
+
+Four of a kind is worth 2 times a triple
+
+Five of a kind is worth 4 times a triple
+
+Six of a kind is worth 8 times a triple
+
+A 1 that is not a part of any other set is worth 100 additional points
+
+A 5 that is not a part of any other set is worth 50 additional points
+
+To make finding patterns easier, count the number of 1, 2, 3, 4, 5, and 6 in the current roll (this would be a good place to use an array of counters). Then a straight is having 1 in each of the counters. A four of a kind is having a 4 in one of the counters. And so on.
+
+Overload the << operator for the player class so that it prints the player’s accumulative score.
+
+Overload the << operator for the diceSet class so that it prints the face values of each die.
+
+Overload the << operator for the die class so that it prints the face value of a single die
+
+Overload the += operator for the player class to add points to the accumulative score.
+
+Overload the ==, !=, <, >, <=, >= operators for the player class so that it compares the accumulative score for two players.
