@@ -238,6 +238,12 @@ int Game::Score(vector<int>& dicePool, int die, array<int, 6>& dieCount, array<i
 		score = dieValue == 1 ? 100 : 50;
 	}
 	//check for straight
+	else if (bool Straight = true) {
+		
+		cout << "you have scored a straight" << endl;
+		system("pause");
+
+	}
 	//check for three Pairs
 	//check for full house (one triple & one pair)
 	//check for 4 of a kind
@@ -245,6 +251,28 @@ int Game::Score(vector<int>& dicePool, int die, array<int, 6>& dieCount, array<i
 
 
 	return score;
+}
+
+bool Game::Straight(vector<int>& dicePool, int die, array<int, 6>& diceCount, array<int, 6>& keptDice, int score)
+{
+	if (dieValue == 1 && dieValue == 2 && dieValue == 3 && dieValue == 4 && dieValue == 5 && dieValue == 6) {
+		score += 3000;
+		return true;
+	}
+	else {
+		return false;
+	}
+	return score;
+}
+
+bool Game::threePair(array<int,6>& diceCount)
+{
+	return false;
+}
+
+bool Game::fourOfAKind(array<int,6>& diceCount)
+{
+	return false;
 }
 
 // A method to roll all the dice in a provided pool

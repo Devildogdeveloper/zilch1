@@ -119,3 +119,14 @@ Overload the << operator for the die class so that it prints the face value of a
 Overload the += operator for the player class to add points to the accumulative score.
 
 Overload the ==, !=, <, >, <=, >= operators for the player class so that it compares the accumulative score for two players.
+
+Player 
+Round 
+accumScore
+Name
+determineToContinue = 0;
+
+change the meld points.
+
+player -> human-> alice -> tim -> stan
+

@@ -27,11 +27,11 @@ private:
 	bool IsValid(unsigned int& selection, vector<int>& dicePool);
 	bool ScoringDice(array<int, 6>& diceCount);
 	int Score(vector<int>& dicePool, int die, array<int, 6>& diceCount, array<int, 6>& keptDice);
-	int Straight(array<int,6>& diceCount);
-	int Pairs();
-	int fourOfAKind();
-	int doubleTriple();
-	int fullHouse();
+	bool Straight(vector<int>& dicePool, int die, array<int,6>& diceCount, array<int, 6>& keptDice, int score);
+	bool threePair(array<int,6>& diceCount);
+	bool fourOfAKind(array<int,6>& diceCount);
+	bool doubleTriple(array<int,6>& diceCount);
+	bool fullHouse(array<int,6>& diceCount);
 	void DiceRoll(vector<int>& dicePool);
 	Player GetChampion(vector<Player> players);
 
